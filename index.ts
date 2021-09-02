@@ -198,3 +198,25 @@ class BallDivideSquare {
         this.curr.startUpdating(cb)
     }
 }
+
+class Renderer {
+
+    bds : BallDivideSquare = new BallDivideSquare()
+    animator : Animator = new Animator()
+
+    render(context : CanvasRenderingContext2D) {
+        this.bds.draw(context)
+    }
+
+    handleTap(cb : Function) {
+        this.bds.startUpdating(() => {
+            this.animator.start(() => {
+                cb()
+                this.bds.update(() => {
+                    this.animator.stop()
+                    cb()
+                })
+            })
+        })
+    }
+}

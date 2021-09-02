@@ -47,7 +47,7 @@ class DrawingUtil {
             context.fillRect(-size / 2, size / 2 - size * sc1, size, size * sc1)
             context.restore()
         }
-        DrawingUtil.drawBall(context, 0, -size / 2 + (-h / 2) * (1 - (sc2 - sc3)), size * 0.2)
+        DrawingUtil.drawBall(context, 0, -size / 2 + (-h / 2) * (1 - (sc2 - sc3)), size * 0.3)
         context.restore()
     }
 
